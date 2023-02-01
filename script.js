@@ -18,16 +18,18 @@ function playRound(playerMove, computerMove) {
   }
 
   // Define rules outside of this?
-  if (playerChoice == computerMove) {
+  if (playerMove == computerMove) {
     return "It's a tie!";
   } else if (
-    (playerChoice == "rock" && computerMove == "scissors") ||
-    (playerChoice == "scissors" && computerMove == "paper") ||
-    (playerChoice == "paper" && computerMove == "rock")
+    (playerMove == "rock" && computerMove == "scissors") ||
+    (playerMove == "scissors" && computerMove == "paper") ||
+    (playerMove == "paper" && computerMove == "rock")
   ) {
-    return `${capitalizeFirstLetter(playerChoice)} beats ${computerMove}. You win!`;
+    playerScore++;
+    return `${capitalizeFirstLetter(playerMove)} beats ${computerMove}. You win!`;
   } else {
-    return `${capitalizeFirstLetter(computerMove)} beats ${playerChoice}. You lose!`;
+    computerScore++;
+    return `${capitalizeFirstLetter(computerMove)} beats ${playerMove}. You lose!`;
   }
   // return the winning move and its player
 }
@@ -41,14 +43,26 @@ function rules() {
   // to easily call in playRound()?
 }
 
+function determineWinner() {
+  if (playerScore >= 3 || playerScore > computerScore) {
+    alert("You win");
+  } else if (computerScore >= 3 || computerScore > playerScore) {
+    alert("You lose");
+  }
+}
+
 function game() {
   let rounds = 0;
   while (rounds < 5) {
-    playRound();
+    const playerChoice = prompt("Rock, paper or scissors?");
+    getPlayerChoice(playerChoice);
+    const computerChoice = getComputerChoice();
+    // playRound(playerChoice, computerChoice);
+    console.log(playRound(playerChoice, computerChoice));
+    rounds++;
   }
-  alert();
+  determineWinner();
 }
 
-const playerChoice = getPlayerChoice("rock");
-const computerChoice = getComputerChoice();
-console.log(playRound(playerChoice, computerChoice));
+// console.log(playRound(playerChoice, computerChoice));
+game();
