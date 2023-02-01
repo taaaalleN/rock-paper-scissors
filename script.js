@@ -24,11 +24,15 @@ function playRound(playerMove, computerMove) {
     (playerChoice == "scissors" && computerChoice == "paper") ||
     (playerChoice == "paper" && computerChoice == "rock")
   ) {
-    console.log(`${playerChoice} beats ${computerChoice}. You win!`);
+    console.log(`${capitalizeFirstLetter(playerChoice)} beats ${computerChoice}. You win!`);
   } else {
-    console.log(`${computerChoice} beats ${playerChoice}. You lose!`);
+    console.log(`${capitalizeFirstLetter(computerChoice)} beats ${playerChoice}. You lose!`);
   }
   // return the winning move and its player
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function rules() {
