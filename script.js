@@ -9,24 +9,22 @@ function getPlayerChoice(choice) {
 }
 
 function playRound(playerMove, computerMove) {
-  console.log("Player move: ", playerMove, "\nComputer move: ", computerMove);
-
-  // REMAKE INTO SWITCH STATEMENT
-  if (!playerMove || !computerChoice) {
+  //   console.log("Player move: ", playerMove, "\nComputer move: ", computerMove);
+  if (!playerMove || !computerMove) {
     return null;
   }
 
   // Define rules outside of this?
-  if (playerChoice == computerChoice) {
+  if (playerChoice == computerMove) {
     return "It's a tie!";
   } else if (
-    (playerChoice == "rock" && computerChoice == "scissors") ||
-    (playerChoice == "scissors" && computerChoice == "paper") ||
-    (playerChoice == "paper" && computerChoice == "rock")
+    (playerChoice == "rock" && computerMove == "scissors") ||
+    (playerChoice == "scissors" && computerMove == "paper") ||
+    (playerChoice == "paper" && computerMove == "rock")
   ) {
-    console.log(`${capitalizeFirstLetter(playerChoice)} beats ${computerChoice}. You win!`);
+    return `${capitalizeFirstLetter(playerChoice)} beats ${computerMove}. You win!`;
   } else {
-    console.log(`${capitalizeFirstLetter(computerChoice)} beats ${playerChoice}. You lose!`);
+    return `${capitalizeFirstLetter(computerMove)} beats ${playerChoice}. You lose!`;
   }
   // return the winning move and its player
 }
@@ -45,6 +43,7 @@ function game() {
   while (rounds < 5) {
     playRound();
   }
+  alert();
 }
 
 const playerChoice = getPlayerChoice("rock");
