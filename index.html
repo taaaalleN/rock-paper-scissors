@@ -11,6 +11,8 @@
   <body>
     <button id="reset-game">Reset game</button>
     <section id="game-area">
+      <p id="game-text">The game is on!</p>
+
       <div id="choices">
         <button id="rock" class="choice">Rock</button>
         <button id="paper" class="choice">Paper</button>
@@ -18,10 +20,12 @@
       </div>
 
       <div id="info-container">
-        <p id="rounds">Rounds played: 0</p>
-        <p id="player-score">Player score: 0</p>
-        <p id="computer-score">Computer score: 0</p>
+        <p id="rounds">Rounds played: <span id="count">0</span></p>
+        <p id="player-score">Player score: <span>0</span></p>
+        <p id="computer-score">Computer score: <span>0</span></p>
       </div>
+      <p id="player-move-text">Your move was: <span id="player-move"></span></p>
+      <p id="computer-move-text">Computer's move was: <span id="computer-move"></span></p>
     </section>
   </body>
 </html>

@@ -26,3 +26,9 @@ body {
 #info-container > * {
     margin: 1em;
 }
+
+#game-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: #121212;
+}
