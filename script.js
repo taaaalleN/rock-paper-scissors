@@ -98,23 +98,24 @@ function determineWinner() {
 
 function game() {
   console.log("Game is live!");
-
+  // let rounds = 0;
   const choices = document.querySelectorAll("#game-area .choice");
 
-  // while (rounds < 5) {
-  console.log("Rounds from game", rounds);
-  // const playerChoice = prompt("Rock, paper or scissors?");
-  // getPlayerChoice(playerChoice);
-  choices.forEach((choice) => {
-    choice.addEventListener("click", (e) => {
-      console.log("Player choice: ", e.target.id);
-      const playerMove = e.target.value;
-      const computerChoice = getComputerChoice();
-      console.log("Computer choice: ", computerChoice);
-      playRound(playerMove, computerChoice);
+  while (rounds < 5) {
+    // console.log("Rounds from game", rounds);
+    // const playerChoice = prompt("Rock, paper or scissors?");
+    // getPlayerChoice(playerChoice);
+    choices.forEach((choice) => {
+      choice.addEventListener("click", (e) => {
+        console.log("Player choice: ", e.target.id);
+        const playerMove = e.target.id;
+        const computerChoice = getComputerChoice();
+        console.log("Computer choice: ", computerChoice);
+        playRound(playerMove, computerChoice);
+      });
     });
-  });
-  // }
+    // rounds++;
+  }
   determineWinner();
   console.log("Game is over");
 }
