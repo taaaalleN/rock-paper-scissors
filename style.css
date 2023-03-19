@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#game-area button {
+    margin: 1em;
+}
+
+#info-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#info-container > * {
+    margin: 1em;
+}
