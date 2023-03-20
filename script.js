@@ -15,7 +15,9 @@ resetGameBtn.addEventListener("click", () => {
 
 function resetGame() {
   playerScore = 0;
+  playerScoreText.innerText = playerScore;
   computerScore = 0;
+  computerScoreText.innerText = computerScore;
   rounds = 0;
   roundsText.innerText = rounds;
 }
@@ -64,6 +66,7 @@ function playRound(playerMove, computerMove) {
     gameText.innerText = `${capitalizeFirstLetter(computerMove)} beats ${playerMove}. You lose!`;
   }
   // return the winning move and its player
+  determineWinner();
 }
 
 function capitalizeFirstLetter(string) {
@@ -86,20 +89,3 @@ choices.forEach((choice) => {
     playRound(e.target.id, getComputerChoice());
   });
 });
-
-function game() {
-  console.log("Game is live!");
-  // let rounds = 0;
-  console.log(rounds);
-
-  for (let i = 0; i < 5; i++) {
-    console.log("Playing!");
-    console.log(rounds);
-
-    continue;
-  }
-  determineWinner();
-  console.log("Game is over");
-}
-
-game();

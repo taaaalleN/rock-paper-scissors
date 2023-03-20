@@ -4,6 +4,8 @@
 
 body {
     height: 100vh;
+    background-color: #464c56;
+    color: #fff;
 }
 
 #game-area {
@@ -15,7 +17,17 @@ body {
 }
 
 #game-area button {
+    border: 1px solid white;
+    background-color: transparent;
     margin: 1em;
+    padding: 1em 1.5em;
+    color: #fff;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+#game-area button:hover {
+    background-color: #9EB7E5;
 }
 
 #info-container {
@@ -30,5 +42,5 @@ body {
 #game-text {
     font-size: 2em;
     font-weight: bold;
-    color: #121212;
+    color: #fff;
 }
