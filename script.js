@@ -25,22 +25,16 @@ function resetGame() {
 function incrementRound() {
   rounds++;
   roundsText.innerText = rounds;
-  // console.log("Rounds from incrementRound", rounds);
 }
 
 function getComputerChoice() {
   let choices = ["rock", "paper", "scissors"];
-  // return console.log(
-  //   "Computer choice: ",
-  //   choices[Math.floor(Math.random() * choices.length)]
-  // );
   const computerChoice = choices[Math.floor(Math.random() * choices.length)];
   computerMoveText.innerText = `${computerChoice}`;
   return computerChoice;
 }
 
 function playRound(playerMove, computerMove) {
-  //   console.log("Player move: ", playerMove, "\nComputer move: ", computerMove);
   if (!playerMove || !computerMove) {
     console.log(playerMove, computerMove);
     console.log("Something went wrong");
@@ -49,7 +43,6 @@ function playRound(playerMove, computerMove) {
 
   incrementRound();
 
-  // Define rules outside of this?
   if (playerMove == computerMove) {
     gameText.innerText = "It's a tie!";
   } else if (
@@ -65,7 +58,6 @@ function playRound(playerMove, computerMove) {
     computerScoreText.innerText = computerScore;
     gameText.innerText = `${capitalizeFirstLetter(computerMove)} beats ${playerMove}. You lose!`;
   }
-  // return the winning move and its player
   determineWinner();
 }
 
